@@ -6,6 +6,7 @@ import type {
 } from "../../../../types/types.d";
 import formatLocationName from "../../../../utils/formatLocationName";
 import { GiCctvCamera } from "react-icons/gi";
+import SpeedLimitIcon from "./SpeedLimitIcon";
 
 export default function ActiveWarningAlert({
 	nearbyCameraAlerts,
@@ -40,16 +41,9 @@ export default function ActiveWarningAlert({
 												{`${alert.distance}ft`}
 											</div>
 										</div>
-										<div className="bg-white h-fit flex flex-col gap-1 p-2 rounded-md border-2 border-[#333]">
-											<div className="font-bold text-center uppercase leading-tight">
-												<div>Speed</div>
-												<div>Limit</div>
-											</div>
-											<div className="text-center font-bold text-4xl leading-8">
-												{alert.posted_speed &&
-													alert.posted_speed}
-											</div>
-										</div>
+										<SpeedLimitIcon
+											posted_speed={alert.posted_speed}
+										/>
 									</div>
 								</>
 							</div>

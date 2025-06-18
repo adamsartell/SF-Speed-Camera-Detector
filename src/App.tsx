@@ -4,6 +4,7 @@ import SpeedCameraMap from "./features/SpeedCameraMap/components/SpeedCameraMap"
 import ActiveWarningAlert from "./features/ActiveWarningAlert/components/ActiveWarningAlert";
 import SimulateWarningAlert from "./features/AlertSettings/components/SimulateWarningAlert";
 import AlertSettings from "./features/AlertSettings/components/AlertSettings";
+import ToggleWarningAlertVolume from "./features/AlertSettings/components/ToggleWarningAlertVolume";
 import type {
 	CurrentPosition,
 	SpeedCamera,
@@ -19,7 +20,6 @@ import {
 import { calculateDistance } from "./../utils/calculateDistance";
 import { removeDuplicatesByLocation } from "./../utils/removeDuplicatesByLocation";
 import Cookies from "js-cookie";
-import ToggleWarningAlertVolume from "./features/AlertSettings/components/ToggleWarningAlertVolume";
 
 function App() {
 	const [currentPosition, setCurrentPosition] =
