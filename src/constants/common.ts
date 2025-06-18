@@ -1,0 +1,8 @@
+// export const WARNING_DISTANCE_METERS = 325;
+export const WARNING_DISTANCE_METERS = 1000;
+export const AUDIO_ENABLED_COOKIE_NAME = "audioEnabled";
+export const THROTTLE_INTERVAL_MS = 500;
+export const MIN_ALERT_DISPLAY_DURATION_MS = 8000;
+export const RECENTER_DELAY_MS = 5000;
+export const STATIONARY_LAT_LNG_THRESHOLD = 0.00001;
+export const SPEED_THRESHOLD_M_PER_S = 0.5;
