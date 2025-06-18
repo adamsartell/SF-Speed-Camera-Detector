@@ -25,9 +25,9 @@ export default function ActiveWarningAlert({
 									<div className="flex gap-2 items-center">
 										{/* <TbAlertCircle size={30} /> */}
 										{/* <GiCctvCamera size={30} />
-									<h2 className="font-medium text-[27px]">
-										SPEED CAMERA
-									</h2> */}
+                  <h2 className="font-medium text-[27px]">
+                    SPEED CAMERA
+                  </h2> */}
 									</div>
 									<div className="flex justify-between items-center">
 										<div className="flex-col gap-1 justify-between flex">
