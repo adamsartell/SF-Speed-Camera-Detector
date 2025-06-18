@@ -1,6 +1,6 @@
-// export const WARNING_DISTANCE_METERS = 325;
 // Maximum distance, in meters, a speed camera can be from the currentPosition to trigger a warning alert.
-export const WARNING_DISTANCE_METERS = 1000;
+export const WARNING_DISTANCE_METERS = 325;
+// export const WARNING_DISTANCE_METERS = 1000;
 
 // Minimum time interval, in milliseconds, between processing new geolocation updates
 export const THROTTLE_INTERVAL_MS = 500;
