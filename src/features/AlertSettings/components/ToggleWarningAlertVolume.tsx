@@ -82,17 +82,23 @@ export default function ToggleWarningAlertVolume({
 	}, [isAudioEnabled]);
 
 	return (
-		<>
+		<div>
 			{!isAudioEnabled && (
-				<IconButton onClick={handleToggleAudio}>
+				<IconButton
+					onClick={handleToggleAudio}
+					ariaLabel="Turn audio on"
+				>
 					<FaVolumeXmark />
 				</IconButton>
 			)}
 			{isAudioEnabled && (
-				<IconButton onClick={handleToggleAudio}>
+				<IconButton
+					onClick={handleToggleAudio}
+					ariaLabel="Turn audio off"
+				>
 					<FaVolumeHigh />
 				</IconButton>
 			)}
-		</>
+		</div>
 	);
 }

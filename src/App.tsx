@@ -46,11 +46,6 @@ function App() {
 				preload="auto"
 			/>
 			<ActiveWarningAlert nearbyCameraAlerts={nearbyCameraAlerts} />
-			<SpeedCameraMap
-				currentPosition={currentPosition}
-				speedCameras={speedCameras}
-				error={error}
-			/>
 			<AlertSettings>
 				<SimulateWarningAlert
 					handleSimulateWarning={handleSimulateWarning}
@@ -69,6 +64,11 @@ function App() {
 					{combinedError}
 				</Notification>
 			)}
+			<SpeedCameraMap
+				currentPosition={currentPosition}
+				speedCameras={speedCameras}
+				error={error}
+			/>
 		</div>
 	);
 }

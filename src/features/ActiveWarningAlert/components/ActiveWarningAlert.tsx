@@ -12,7 +12,12 @@ export default function ActiveWarningAlert({
 	nearbyCameraAlerts,
 }: ActiveWarningAlertProps) {
 	return (
-		<div className="absolute left-[10px] lg:left-[25%] top-[10px] lg:w-[50%] w-[calc(100%-20px)] z-50">
+		<div
+			role="alert"
+			aria-live="assertive"
+			aria-atomic="true"
+			className="absolute left-[10px] lg:left-[25%] top-[10px] lg:w-[50%] w-[calc(100%-20px)] z-50"
+		>
 			{nearbyCameraAlerts.length > 0 && (
 				<>
 					{nearbyCameraAlerts.map(

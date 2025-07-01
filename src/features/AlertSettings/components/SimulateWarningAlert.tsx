@@ -5,5 +5,11 @@ export default function SimulateWarningAlert({
 }: {
 	handleSimulateWarning: () => void;
 }) {
-	return <Button onClick={handleSimulateWarning} text="Simulate Alert" />;
+	return (
+		<Button
+			ariaLabel="Simulate an alert"
+			onClick={handleSimulateWarning}
+			text="Simulate Alert"
+		/>
+	);
 }
