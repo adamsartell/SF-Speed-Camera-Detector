@@ -6,6 +6,7 @@ import SimulateWarningAlert from "./features/AlertSettings/components/SimulateWa
 import AlertSettings from "./features/AlertSettings/components/AlertSettings";
 import ToggleWarningAlertVolume from "./features/AlertSettings/components/ToggleWarningAlertVolume";
 import Notification from "./components/Notification";
+import Terms from "./features/Legal/Terms";
 
 import { useGeolocation } from "./hooks/useGeoLocation";
 import { useSpeedCameras } from "./hooks/useSpeedCameras";
@@ -56,6 +57,7 @@ function App() {
 					setError={setError}
 				/>
 			</AlertSettings>
+			<Terms />
 			{combinedError && (
 				<Notification>
 					<span className="w-[25px]">
