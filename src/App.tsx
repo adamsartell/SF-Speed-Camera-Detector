@@ -33,7 +33,11 @@ function App() {
 
 	return (
 		<div className="text-[#202020]">
-			<audio ref={audioRef} src="/sounds/warning.mp3" preload="auto" />
+			<audio
+				ref={audioRef}
+				src="/audio/speed-camera-warning.mp3"
+				preload="auto"
+			/>
 			<ActiveWarningAlert nearbyCameraAlerts={nearbyCameraAlerts} />
 			<SpeedCameraMap
 				currentPosition={currentPosition}
