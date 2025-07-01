@@ -38,6 +38,5 @@ export interface ActiveWarningAlertProps {
 export interface AlertSettingsProps {
 	isAudioEnabled: boolean;
 	setIsAudioEnabled: Dispatch<SetStateAction<boolean>>;
-	audioRef: React.MutableRefObject<HTMLAudioElement | null>;
 	setError: (errMsg: string) => void;
 }

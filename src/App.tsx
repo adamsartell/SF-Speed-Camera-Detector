@@ -21,12 +21,14 @@ function App() {
 		useAudioSettings();
 
 	const audioRef = useRef<HTMLAudioElement | null>(null);
+	const audioRefEnabled = useRef<HTMLAudioElement | null>(null);
 
 	const { nearbyCameraAlerts, handleSimulateWarning } = useWarningAlerts(
 		currentPosition,
 		speedCameras,
 		isAudioEnabled,
-		audioRef
+		audioRef,
+		audioRefEnabled
 	);
 
 	const combinedError = geolocationError || cameraError || audioSettingsError;
@@ -36,6 +38,11 @@ function App() {
 			<audio
 				ref={audioRef}
 				src="/audio/speed-camera-warning.mp3"
+				preload="auto"
+			/>
+			<audio
+				ref={audioRefEnabled}
+				src="/audio/notification.mp3"
 				preload="auto"
 			/>
 			<ActiveWarningAlert nearbyCameraAlerts={nearbyCameraAlerts} />
@@ -51,7 +58,6 @@ function App() {
 				<ToggleWarningAlertVolume
 					isAudioEnabled={isAudioEnabled}
 					setIsAudioEnabled={toggleAudioEnabled}
-					audioRef={audioRef}
 					setError={setError}
 				/>
 			</AlertSettings>

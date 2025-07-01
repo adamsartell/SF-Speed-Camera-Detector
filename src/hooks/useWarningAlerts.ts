@@ -21,7 +21,8 @@ export function useWarningAlerts(
 	currentPosition: CurrentPosition | null,
 	speedCameras: SpeedCamera[],
 	isAudioEnabled: boolean,
-	audioRef: RefObject<HTMLAudioElement | null>
+	audioRef: RefObject<HTMLAudioElement | null>,
+	audioRefEnabled: RefObject<HTMLAudioElement | null>
 ) {
 	const [activeAlertsMap, setActiveAlertsMap] = useState<
 		Map<string, ManagedWarningAlert>
@@ -111,7 +112,13 @@ export function useWarningAlerts(
 				}
 			});
 
-			if (playSoundFlag && isAudioEnabled && audioRef.current) {
+			if (
+				playSoundFlag &&
+				isAudioEnabled &&
+				audioRef.current &&
+				audioRefEnabled.current
+			) {
+				audioRefEnabled.current?.play().catch(() => {});
 				audioRef.current.play().catch(() => {});
 			}
 
@@ -156,9 +163,32 @@ export function useWarningAlerts(
 			return updated;
 		});
 
-		if (isAudioEnabled && audioRef.current) {
+		if (isAudioEnabled && audioRef.current && audioRefEnabled.current) {
+			// Reset current time for both audio elements
 			audioRef.current.currentTime = 0;
-			audioRef.current.play().catch(() => {});
+			audioRefEnabled.current.currentTime = 0;
+
+			// Pause duration in milliseconds
+			const pauseDuration = 400;
+
+			audioRefEnabled.current
+				.play()
+				.then(() => {
+					return new Promise((resolve) =>
+						setTimeout(resolve, pauseDuration)
+					);
+				})
+				.then(() => {
+					audioRef.current?.play().catch((error) => {
+						console.error("Error playing audioRef:", error);
+					});
+				})
+				.catch((error) => {
+					console.error(
+						"Error playing audioRefEnabled or during pause:",
+						error
+					);
+				});
 		}
 
 		setTimeout(() => {
